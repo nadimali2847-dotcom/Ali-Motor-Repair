@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ali Motor Repair - Noida Sector 93</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:white;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:#000;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
+.logo{color:#D4AF37;font-size:20px;font-weight:bold}
+
+.nav-links{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+.menu-btn{
+display:none;
+font-size:25px;
+background:none;
+border:none;
+color:white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav-links{display:none;}
+.nav-links.active{
+display:flex;
+flex-direction:column;
+background:#000;
+position:absolute;
+top:60px;
+width:100%;
+padding:20px;
+}
+.menu-btn{display:block;}
+}
+
+/* HERO */
+.hero{
+margin-top:70px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200') center/cover;
+}
+
+.hero h1{
+font-size:40px;
+color:#D4AF37;
+}
+
+.btn{
+padding:12px 25px;
+background:#25D366;
+color:white;
+border-radius:30px;
+text-decoration:none;
+margin-top:20px;
+display:inline-block;
+}
+
+.btn:hover{
+background:#128C7E;
+transform:scale(1.05);
+}
+
+/* SECTION */
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.card{
+background:#1a1a1a;
+padding:20px;
+margin:10px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* FORM */
+input,textarea{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:12px 25px;
+background:#25D366;
+border:none;
+color:white;
+border-radius:20px;
+}
+
+/* MAP */
+iframe{
+width:100%;
+height:300px;
+border:none;
+margin-top:20px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="logo">Ali Motor</div>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="menu-btn">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<h1>Ali Motor Repair</h1>
+<p>Noida Sector 93 Car Service Expert</p>
+
+<a href="https://wa.me/919389655352" class="btn">WhatsApp Now</a>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+<h2>Services</h2>
+
+<div class="card">Car Servicing</div>
+<div class="card">AC Repair</div>
+<div class="card">Engine Work</div>
+<div class="card">Dent & Paint</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<h2>Contact & Booking</h2>
+
+<p>📍 Sector 93, Noida</p>
+<p>📞 9389655352</p>
+
+<!-- FORM -->
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+<textarea id="msg" placeholder="Problem"></textarea>
+
+<button onclick="sendWhatsApp()">Book on WhatsApp</button>
+
+<!-- MAP -->
+<iframe src="https://maps.google.com/maps?q=noida%20sector%2093&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Ali Motor Repair
+</footer>
+
+<script>
+const btn=document.querySelector('.menu-btn');
+const nav=document.querySelector('.nav-links');
+
+btn.onclick=()=>{
+nav.classList.toggle('active');
+}
+
+// WhatsApp Booking
+function sendWhatsApp(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let msg=document.getElementById("msg").value;
+
+let text=`Name: ${name}%0APhone: ${phone}%0AProblem: ${msg}`;
+
+window.open(`https://wa.me/919389655352?text=${text}`);
+}
+</script>
+
+</body>
+</html>
